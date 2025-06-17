@@ -1,51 +1,134 @@
-body {
+/* Reset & Base */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #121212;
-  color: #f0f0f0;
-  padding: 20px;
+  padding: 0;
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+/* Container */
 .container {
-  max-width: 700px;
+  max-width: 600px;
   margin: auto;
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
 }
 
-textarea,
-input[type="file"] {
+/* Headings */
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #facc15;
+}
+
+h2, h3 {
+  color: #facc15;
+  margin-top: 1.5rem;
+}
+
+/* Textarea */
+textarea {
   width: 100%;
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
+  padding: 1rem;
+  margin-bottom: 1rem;
   font-size: 1rem;
-  background: #2c2c2c;
-  color: #fff;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  resize: vertical;
 }
 
+/* Buttons */
 button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #f39c12;
+  background-color: #facc15;
   color: #000;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
 }
 
 button:hover {
-  background: #e67e22;
+  background-color: #eab308;
 }
 
-.result {
-  margin-top: 20px;
-  background: #2c2c2c;
-  padding: 15px;
-  border-radius: 10px;
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* Result Section */
+#resultContainer {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+pre {
   white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Status message */
+#status {
+  margin-top: 1rem;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* Example Message Section */
+#exampleContainer {
+  margin-top: 2rem;
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-left: 4px solid #facc15;
+  border-radius: 8px;
+}
+
+#exampleContainer p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/* Accessibility: screen-reader only */
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  textarea {
+    font-size: 0.95rem;
+  }
 }
